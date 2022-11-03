@@ -1,5 +1,6 @@
 # infinite-scroll
 
+[Live Demo](https://sagreenxyz.github.io/infinite-scroll/)
 ## Resources
 - [Custom Loaders](https://loading.io/)
 - [Unsplash Developers API](https://unsplash.com/developers)
