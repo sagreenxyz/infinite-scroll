@@ -19,7 +19,6 @@ function imageLoaded() {
     if (imagesLoaded === totalImages) {
         ready = true
         loader.hidden = true
-        console.log('ready =', ready)
     }
 }
 
@@ -34,7 +33,6 @@ function setAttributes(element, attributes) {
 function displayPhotos() {
     imagesLoaded = 0
     totalImages = photosArray.length
-    console.log('total images', totalImages)
     photosArray.forEach(photo => {
         const item = document.createElement('a')
         setAttributes(item, {
@@ -63,14 +61,12 @@ async function getPhotos() {
         photosArray = await response.json()
         displayPhotos()
     } catch (error) {
-
+        // TODO: handle errors here
     }
 }
 
 // Check to see if scrolling near bottom of page, load more photos
 window.addEventListener('scroll', () => {
-    // console.log('scrolling')
-    // console.log('scrolled', window.innerHeight, window.scrollY, document.body.offsetHeight)
     if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 1000 && ready) {
         ready = false
         getPhotos()
